@@ -39,10 +39,8 @@ public class BallHandler : MonoBehaviour{
     private void Update(){
         if (currentBallRigidbody2D == null) return;
         if (Touch.activeTouches.Count == 0){
-            if (isDragging){
-                LaunchBall();
-            }
-
+            if (!isDragging) return;
+            LaunchBall();
             isDragging = false;
         }
         else{
